@@ -13,6 +13,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        PlayerMove();
+    }
+
+    public void PlayerMove()
+    {
+        // Player 이동 InputSystem 
+
+        // Animation 추가하면 이동에 맞게 이동
     }
 }

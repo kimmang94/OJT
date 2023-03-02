@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Wood : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void PlayerLook()
+    {
+        // Player & Camera 바라보기
     }
 }

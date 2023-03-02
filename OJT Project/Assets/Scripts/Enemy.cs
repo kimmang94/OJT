@@ -15,4 +15,10 @@ public class Enemy : MonoBehaviour
     {
         
     }
+
+
+    public void DestroyEnemy()
+    {
+        // 충돌 확인후 본인 제거
+    }
 }

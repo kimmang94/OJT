@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Pet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Transform playerTransform;
+
+    public void PetPositionSetting()
     {
+        // Player 이동 하면 Follow
+
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PetLookRotationSetting()
     {
-        
+        // Player 가 바라보는 방향 바라봄
     }
 }

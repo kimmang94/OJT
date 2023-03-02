@@ -25,14 +25,18 @@ public class Player : MonoBehaviour
         if (input != null)
         {
             moveDirection = new Vector3(input.x, 0f, input.y);
-            Debug.Log("Palyer Moving");
         }
     }
 
     public void PlayerMove()
     {
         // Player 이동 InputSystem 
-
+        bool hasControl = (moveDirection != Vector3.zero);
+        if (hasControl)
+        {
+            transform.rotation = Quaternion.LookRotation(moveDirection);
+            transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+        }
         // Animation 추가하면 이동에 맞게 이동
     }
 }

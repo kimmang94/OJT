@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager
+public class GameManager : MonoBehaviour
 {
-    void Start()
+    private void Awake()
     {
         initialize();
+        DontDestroyOnLoad(this.gameObject);
     }
+    void Start()
+    {
+        
+    }
+    
 
     public void initialize()
     {

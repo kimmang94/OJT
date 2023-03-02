@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Bullet : Weapon
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
         CreateBullet();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -24,5 +23,10 @@ public class Bullet : Weapon
     public void PlaneSearch()
     {
         // Ray 를 하단으로 쏴서 Plan있는지 없는지 확인
+    }
+
+    public void BulletCount()
+    {
+        // 
     }
 }

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Wood : Player
 {
-
+    [SerializeField]
+    Transform mainCameraTransform;
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void PlayerLook()

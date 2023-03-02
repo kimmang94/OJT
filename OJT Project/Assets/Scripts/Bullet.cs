@@ -20,6 +20,11 @@ public class Bullet : Weapon
         // Bullet 10개 미리생성 ObjectPool 로 관리
     }
 
+    public void ObjectPoolingBullet()
+    {
+
+    }
+
     public void PlaneSearch()
     {
         // Ray 를 하단으로 쏴서 Plan있는지 없는지 확인

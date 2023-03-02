@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    Vector3 moveDirection;
+    float moveSpeed = 3.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +17,16 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMove();
+    }
+
+    void OnMove(InputValue value)
+    {
+        Vector2 input = value.Get<Vector2>();
+        if (input != null)
+        {
+            moveDirection = new Vector3(input.x, 0f, input.y);
+            Debug.Log("Palyer Moving");
+        }
     }
 
     public void PlayerMove()

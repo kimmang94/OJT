@@ -13,8 +13,11 @@ public class Enemy : MonoBehaviour
     public void HitAttack()
     {
         // 총알과 맞았는지 확인
-
-        DestroyEnemy();
+        if (false)
+        {
+            DestroyEnemy();
+        }
+        
     }
 
     public void DestroyEnemy()

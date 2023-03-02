@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Bullet : Weapon
 {
+    #region [const]
+    const int MAXBULLET = 10;
+    const int MINBULLET = 0;
+    #endregion
+
+    int currentBullet = 0;
+
 
     private void OnEnable()
     {
@@ -32,6 +39,6 @@ public class Bullet : Weapon
 
     public void BulletCount()
     {
-        // 
+        // Fire ´ç currentBullet --;
     }
 }

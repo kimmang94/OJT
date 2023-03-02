@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class CameraTracking : MonoBehaviour
 {
+    [SerializeField]
     Transform PlayerTransform;
+    [SerializeField]
     Player playerInfo;
     void LateUpdate()
     {
         // Player 이동후 쿼터뷰에 맞게 위치 조정
+        PlayerTransformTracking();
     }
 
     public void PlayerTransformTracking()
     {
-        this.gameObject.transform.position += playerInfo.transform.position;
+        // Player Rotate 변화에 따라 조절
         
     }
 }

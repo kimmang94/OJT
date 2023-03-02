@@ -8,6 +8,10 @@ public class CameraTracking : MonoBehaviour
     Transform PlayerTransform;
     [SerializeField]
     Player playerInfo;
+    void OnEnable()
+    {
+
+    }
     void LateUpdate()
     {
         // Player 이동후 쿼터뷰에 맞게 위치 조정

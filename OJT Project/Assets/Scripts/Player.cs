@@ -8,11 +8,10 @@ public class Player : MonoBehaviour
     Vector3 moveDirection;
     float moveSpeed = 3.0f;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {

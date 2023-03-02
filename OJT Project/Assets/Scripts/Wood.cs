@@ -6,7 +6,10 @@ public class Wood : Player
 {
     [SerializeField]
     Transform mainCameraTransform;
-    // Update is called once per frame
+    void OnEnable()
+    {
+
+    }
     void Update()
     {
         

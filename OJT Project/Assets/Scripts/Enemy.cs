@@ -5,7 +5,10 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     bool isHit = false;
-    
+    void OnEnable()
+    {
+
+    }
     void Update()
     {
         

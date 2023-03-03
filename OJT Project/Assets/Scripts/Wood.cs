@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wood : Player
+public class Wood : MonoBehaviour
 {
     [SerializeField]
     Transform mainCameraTransform;
-    void OnEnable()
+    private void OnEnable()
     {
-
+        LookingCamera();
     }
-    void Update()
+    public void LookingCamera()
     {
+        // Player & Camera 바라보기
+        mainCameraTransform = Camera.main.transform;
+        mainCameraTransform.LookAt(mainCameraTransform.position);
         
     }
 
-    public void PlayerLook()
-    {
-        // Player & Camera 바라보기
-    }
 }

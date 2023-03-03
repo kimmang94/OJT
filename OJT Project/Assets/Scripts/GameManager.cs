@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject bulletInfo;
-    
+    Wood woods;
 
     private void Awake()
     {
@@ -19,14 +18,17 @@ public class GameManager : MonoBehaviour
 
     public void initialize()
     {
-        // DontDestroyOnLoad(this.gameObject);
-        // PlaySetting();
+        DontDestroyOnLoad(this.gameObject);
+        PlayAssetsSetting();
     }
 
-    public void PlaySetting()
+    public void PlayAssetsSetting()
     {
         // Plan 제외 UI, Player등 요소 Instantiate
-        // Resources Load(Prefabs)
+        GameObject instanceEnemysObject = Instantiate(Resources.Load<GameObject>("Prefabs/Enemys"));
+        GameObject instancePlayerObject = Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
+        GameObject instanceUI = Instantiate(Resources.Load<GameObject>("Prefabs/UI"));
+        GameObject instanceWoodsObject = Instantiate(Resources.Load<GameObject>("Prefabs/Woods"));
     }
 }
 

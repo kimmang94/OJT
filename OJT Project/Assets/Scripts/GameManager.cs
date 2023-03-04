@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    Wood woods;
-
     private void Awake()
     {
         initialize();
@@ -27,6 +24,7 @@ public class GameManager : MonoBehaviour
         // Plan 제외 UI, Player등 요소 Instantiate
         GameObject instanceEnemysObject = Instantiate(Resources.Load<GameObject>("Prefabs/Enemys"));
         GameObject instancePlayerObject = Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
+        GameObject instancePetObject = Instantiate(Resources.Load<GameObject>("Prefabs/Pet"));
         GameObject instanceUI = Instantiate(Resources.Load<GameObject>("Prefabs/UI"));
         GameObject instanceWoodsObject = Instantiate(Resources.Load<GameObject>("Prefabs/Woods"));
     }

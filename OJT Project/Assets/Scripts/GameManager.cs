@@ -4,30 +4,24 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // Start is called before the first frame update
     private void Awake()
     {
-        initialize();
+        Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
+        Instantiate(Resources.Load<GameObject>("Prefabs/Pet"));
+        Instantiate(Resources.Load<GameObject>("Prefabs/Enemys"));
+        Instantiate(Resources.Load<GameObject>("Prefabs/Wood"));
+        Instantiate(Resources.Load<GameObject>("Prefabs/UI"));
+
     }
     void Start()
     {
         
     }
 
-    public void initialize()
+    // Update is called once per frame
+    void Update()
     {
-        DontDestroyOnLoad(this.gameObject);
-        PlayAssetsSetting();
-    }
-
-    public void PlayAssetsSetting()
-    {
-        // Plan 제외 UI, Player등 요소 Instantiate
-        GameObject instanceEnemysObject = Instantiate(Resources.Load<GameObject>("Prefabs/Enemys"));
-        GameObject instancePlayerObject = Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
-        GameObject instancePetObject = Instantiate(Resources.Load<GameObject>("Prefabs/Pet"));
-        GameObject instanceUI = Instantiate(Resources.Load<GameObject>("Prefabs/UI"));
-        GameObject instanceWoodsObject = Instantiate(Resources.Load<GameObject>("Prefabs/Woods"));
+        
     }
 }
-
-

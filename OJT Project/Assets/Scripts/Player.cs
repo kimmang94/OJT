@@ -6,25 +6,28 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    public Vector2 inputVec;
-    public float speed = 3;
-
-    private Rigidbody rigid;
-
+    PlayerInput playerInput;
+    float speed = 5;
+    Vector3 moveDirection;
+    Transform playerTransform;
     private void Start()
     {
-        rigid = GetComponent<Rigidbody>();
-    }
-    private void FixedUpdate()
-    {
-        Vector2 nextVec = inputVec * speed * Time.deltaTime;
-        Vector3 vec3next = new Vector3(nextVec.x, 0, nextVec.y);
-        transform.LookAt(rigid.position + vec3next);
-        rigid.MovePosition(rigid.position + vec3next);
+        playerInput = GetComponent<PlayerInput>();
+        playerTransform = transform;
     }
 
-    void OnMove(InputValue value)
+    private void Update()
     {
-        inputVec = value.Get<Vector2>();
+        Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
+        moveDirection = new Vector3(input.x, 0, input.y);
+
+        transform.position += moveDirection * speed * Time.deltaTime;
+
+        if (moveDirection != Vector3.zero)
+        {
+            // 캐릭터가 이동하는 방향으로 회전합니다.
+            playerTransform.rotation = Quaternion.LookRotation(moveDirection);
+        }
     }
+   
 }

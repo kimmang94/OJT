@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instantiate(Resources.Load<GameObject>("Prefabs/Player"));
-        Instantiate(Resources.Load<GameObject>("Prefabs/Pet"));
-        Instantiate(Resources.Load<GameObject>("Prefabs/Enemys"));
-        Instantiate(Resources.Load<GameObject>("Prefabs/Wood"));
-        Instantiate(Resources.Load<GameObject>("Prefabs/UI"));
+        //Instantiate(Resources.Load<GameObject>("Prefabs/Pet"));
+       // Instantiate(Resources.Load<GameObject>("Prefabs/Enemys"));
+        //Instantiate(Resources.Load<GameObject>("Prefabs/Wood"));
+        //Instantiate(Resources.Load<GameObject>("Prefabs/UI"));
 
     }
     void Start()

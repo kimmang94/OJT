@@ -3,34 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class Player : MonoBehaviour
 {
-        public float speed = 10f;
-        public GameObject missilePrefab;
-        public Transform missileSpawn;
+    public Vector2 inputVec;
+    public float speed = 3;
 
-        private Vector2 moveInput;
-        private Rigidbody rb;
+    private Rigidbody rigid;
 
-        private void Start()
-        {
-            rb = GetComponent<Rigidbody>();
-        }
+    private void Start()
+    {
+        rigid = GetComponent<Rigidbody>();
+    }
+    private void FixedUpdate()
+    {
+        Vector2 nextVec = inputVec * speed * Time.deltaTime;
+        Vector3 vec3next = new Vector3(nextVec.x, 0, nextVec.y);
+        transform.LookAt(rigid.position + vec3next);
+        rigid.MovePosition(rigid.position + vec3next);
+    }
 
-        private void OnMove(InputValue value)
-        {
-            moveInput = value.Get<Vector2>();
-        }
-
-        public void OnFire()
-        {
-            Instantiate(missilePrefab, missileSpawn.position, missileSpawn.rotation);
-        }
-
-        private void FixedUpdate()
-        {
-            Vector3 movement = new Vector3(moveInput.x, 0f, moveInput.y);
-            rb.AddForce(movement * speed);
-        }
-    
+    void OnMove(InputValue value)
+    {
+        inputVec = value.Get<Vector2>();
+    }
 }

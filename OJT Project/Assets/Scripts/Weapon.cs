@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-
+    int[] array = { 1, 2, 3 };
     void OnEnable()
     {
 

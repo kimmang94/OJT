@@ -2,22 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pet : Player
+public class Pet : MonoBehaviour
 {
-    Transform playerTransform;
-    void OnEnable()
-    {
+    public Transform playerTransform; // 주인공 캐릭터의 Transform 컴포넌트
+    public float speed = 5f; // Pet 오브젝트의 이동 속도
 
-    }
-    public void PetPositionSetting()
+    void FixedUpdate()
     {
-        // Player 이동 하면 Follow
+        // 주인공 캐릭터의 위치를 따라가기
+        Vector3 targetPosition = new Vector3(playerTransform.position.x, transform.position.y, playerTransform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        
-    }
-
-    public void PetLookRotationSetting()
-    {
-        // Player 가 바라보는 방향 바라봄
+        // 주인공 캐릭터 쪽으로 회전하기
+        transform.LookAt(playerTransform);
     }
 }

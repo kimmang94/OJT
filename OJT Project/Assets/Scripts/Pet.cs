@@ -4,34 +4,24 @@ using UnityEngine;
 
 public class Pet : MonoBehaviour
 {
-    float moveSpeed = 3; //move speed
-    float rotationSpeed = 3; //speed of turning
-
-    Transform myTransform;//current transform data of canine
-    [SerializeField]
+    Player playerTransform;
     Transform target;
-    void Awake()
+
+    Vector3 direction;
+    private void OnEnable()
     {
-        myTransform = transform; //cache transform data for easy access/preformance
+        playerTransform = GetComponent<Player>();
+        GetPlayerTransform();
     }
 
-    void Start()
+    private void Update()
     {
-        target = target.transform;
-
+        transform.LookAt(target);
     }
-
-    void Update()
+    void GetPlayerTransform()
     {
-        //rotate to look at the player
-        myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
-        Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
-
-        //move towards the player
-        myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
-
-
+        target = playerTransform.transform;
+        
     }
-
 
 }

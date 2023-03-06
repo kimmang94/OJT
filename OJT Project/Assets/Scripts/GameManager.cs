@@ -5,30 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    Bullet bulletPrefab;
-
-    private static GameManager instance;
+    [SerializeField] private Bullet bullet;
+    [SerializeField] private Player player;
     private void Awake()
     {
-        InstanceNullCheck();
         SettingPrefabs();
-
-    }
-    private void Update()
-    {
-
-    }
-    void InstanceNullCheck()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
     void SettingPrefabs()
@@ -40,5 +21,9 @@ public class GameManager : MonoBehaviour
         Instantiate(Resources.Load<GameObject>("Prefabs/UI"));
     }
 
+    void BulletCount()
+    {
+
+    }
 
 }

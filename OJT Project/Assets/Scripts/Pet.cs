@@ -4,16 +4,34 @@ using UnityEngine;
 
 public class Pet : MonoBehaviour
 {
-    public Transform playerTransform; // 주인공 캐릭터의 Transform 컴포넌트
-    public float speed = 5f; // Pet 오브젝트의 이동 속도
+    float moveSpeed = 3; //move speed
+    float rotationSpeed = 3; //speed of turning
 
-    void FixedUpdate()
+    Transform myTransform;//current transform data of canine
+    [SerializeField]
+    Transform target;
+    void Awake()
     {
-        // 주인공 캐릭터의 위치를 따라가기
-        Vector3 targetPosition = new Vector3(playerTransform.position.x, transform.position.y, playerTransform.position.z);
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
-        // 주인공 캐릭터 쪽으로 회전하기
-        transform.LookAt(playerTransform);
+        myTransform = transform; //cache transform data for easy access/preformance
     }
+
+    void Start()
+    {
+        target = target.transform;
+
+    }
+
+    void Update()
+    {
+        //rotate to look at the player
+        myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
+        Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
+
+        //move towards the player
+        myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+
+
+    }
+
+
 }

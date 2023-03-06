@@ -11,11 +11,13 @@ public class Player : MonoBehaviour
     Vector3 moveDirection;
     Transform playerTransform;
 
+    BulletFactory bullet;
+
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         playerTransform = transform;
-        
+        bullet = GetComponent<BulletFactory>();
     }
 
     private void Update()
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour
         // UI Click 를 통한 Event 는 EventSystem
         // 미사일 발사
         Debug.Log("Click Fire");
+
     }
 
    

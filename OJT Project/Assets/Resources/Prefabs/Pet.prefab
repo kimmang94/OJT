@@ -240,5 +240,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ba44809fd87f94b9b80c0750d9a5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 8093329492852192663, guid: ee15856aed7c0124881905969e86986e, type: 3}
-  speed: 10
+  target: {fileID: 3556621657079778114, guid: bc1c81cea80b6634a8ff71b9db245256, type: 3}

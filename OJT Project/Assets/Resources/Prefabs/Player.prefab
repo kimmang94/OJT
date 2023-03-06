@@ -674,6 +674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletResponPosition
       objectReference: {fileID: 0}
+    - target: {fileID: 232621578189510410, guid: c43a18fc08921c64b9d9f22a63db9283, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6184644445942803721, guid: c43a18fc08921c64b9d9f22a63db9283, type: 3}
       propertyPath: m_RootOrder
       value: 0

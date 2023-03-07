@@ -361,10 +361,14 @@
 "Assets/Scripts/Bullet.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/Enemy.cs"
-"Assets/Scripts/GameManager.cs"
+"Assets/Scripts/Factory/BulletFactory.cs"
+"Assets/Scripts/LookAtPlayer.cs"
+"Assets/Scripts/Managers/GameManager.cs"
+"Assets/Scripts/Managers/ResourceManager.cs"
 "Assets/Scripts/Pet.cs"
 "Assets/Scripts/Player.cs"
-"Assets/Scripts/Weapon.cs"
+"Assets/Scripts/Wood.cs"
+"Assets/Scripts/WoodManager.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/EnvMapAnimator.cs"
 -langversion:9.0
 

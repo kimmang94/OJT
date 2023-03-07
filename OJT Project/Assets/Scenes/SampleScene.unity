@@ -535,6 +535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woods
       objectReference: {fileID: 0}
+    - target: {fileID: 4892067809701135407, guid: cf259e75efad02446865eb9823724ba8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4892067809984526196, guid: cf259e75efad02446865eb9823724ba8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.39

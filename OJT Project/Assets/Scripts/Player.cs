@@ -10,9 +10,6 @@ public class Player : MonoBehaviour
     float speed = 5;
     Vector3 moveDirection;
     Transform playerTransform;
-
-    BulletFactory bullet;
-
     private void OnEnable()
     {
         playerInput = GetComponent<PlayerInput>();

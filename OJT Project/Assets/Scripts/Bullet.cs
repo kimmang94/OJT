@@ -5,24 +5,16 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody rigid;
-
-    private float bulletSpeed = 100;
-
-
+    Transform bulletPosition;
+    [SerializeField]
+    ObjectPoolManager objectPoolManager;
     private void Start()
     {
-        rigid = GetComponent<Rigidbody>();
+        objectPoolManager = GetComponent<ObjectPoolManager>();
     }
-
-    void Attack()
+    public void OnFire()
     {
-        rigid.AddForce(Vector3.forward * bulletSpeed * Time.deltaTime);
-    }
-    void currentRayCastHitInfo()
-    {
-        // 현재 ray에 닿고 있는 객체 
-
-        // 만약 객체가 plane 이면 사라지지않음
+        Debug.Log("OnFire");
+        objectPoolManager.UsePool(bulletPosition.position);
     }
 }
